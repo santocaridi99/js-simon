@@ -10,16 +10,12 @@ setTimeout(function(){
 
 //prompt con timer di 30 secondi(funzione)
 setTimeout(function(){
-    //list per  numeri inserita dall'utente
-    let userList = [];
-    //lista per numeri corretti
-    let correctNum = []
-    //contatore che conta numeri corretti
     let count = 0;
     for(let i=0 ; i < 5 ;i++){
        let userNumber = parseInt(prompt('inserisci numeri che hai visto'))
+       console.log(userNumber)
        userList.push(userNumber);
-       if(numbers[i] === userNumber){
+       if(numbers.includes(userNumber)){
         count++;
         correctNum.push(userNumber);
     }
@@ -35,6 +31,11 @@ setTimeout(function(){
 //(0) dichiaro le variabili
 const outputHtml = document.getElementById('output');
 let numbers=[];
+ //list per  numeri inserita dall'utente
+ let userList = [];
+ //lista per numeri corretti
+ let correctNum = []
+ //contatore che conta numeri corretti
 //(1.2)
 while(numbers.length < 5 ){
     let number = randomNumber(1 , 100);
@@ -45,4 +46,6 @@ while(numbers.length < 5 ){
 //stampo numbers a schermo
 outputHtml.innerHTML = `Simon say : ${numbers}`;
 
-
+//debug
+console.log(correctNum)
+console.log(numbers)
